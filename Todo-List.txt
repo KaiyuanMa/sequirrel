@@ -1,0 +1,57 @@
+Brain-storming
+https://excalidraw.com/#room=7bb7b9f10ef76d107f77,ehJGsvpuof7g3l4UsG5Aog
+
+-- FRONT END --
+
+* Wireframe ? (David, Kayiun)
+* Layout/CSS (David, Kayiun, Lorenzo)
+* ReactFlow - mapping (Kayiun)
+* Turn user input an export file (Doobin)
+* Home Page ...hold
+* User Page ...hold
+* Download Page (Doobin)
+* Login/Signup Page (Lorenzo)
+* guest, local storage 
+* OAuth ...hold
+
+
+-- BACK END --
+
+CRUD // Create, Read, Update, Delete
+* guest routes
+* login/signup routes (Lorenzo)
+* DataSet routes
+* DataSet/Model routes
+* Entry routes
+* Validation routes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- BONUS --
+
+* Socket ?
+* Admin ?
+* 2FA - 2 Factor Authentication
