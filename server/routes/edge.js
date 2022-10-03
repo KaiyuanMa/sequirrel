@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { isLoggedIn, haveAccess } = require("./middleware");
 const { Model, DataSet, Edge } = require("../db");
-const Op = require("Sequelize").Op;
+const Op = require("sequelize").Op;
 
 //GET
 
