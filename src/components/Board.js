@@ -225,7 +225,7 @@ function Flow() {
         style={rfStyle}
         defaultEdgeOptions={defaultEdgeOptions}
       >
-        <MiniMap />
+        <MiniMap nodeColor="#202020" />
         <Controls />
         <Background variant="dots" gap={20} />
         <MapTool addModelHandelClick={addModelHandelClick} />
