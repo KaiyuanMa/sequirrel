@@ -21,8 +21,8 @@ const User = conn.define("user", {
   },
   email: {
     type: Sequelize.STRING,
-    unique: true,
-    allowNull: true,
+    unique: false,
+    allowNull: false,
   },
   recentDataSet: {
     type: Sequelize.STRING,

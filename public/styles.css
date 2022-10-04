@@ -827,3 +827,10 @@ select:focus {
   background-color: white;
   color: black;
 }
+
+/* UserControl */
+.user-control-wrapper {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}

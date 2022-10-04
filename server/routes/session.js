@@ -4,6 +4,7 @@ const { User } = require("../db");
 const { isLoggedIn } = require("./middleware");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
+const seed = require("../db/signUpSeed.js/index");
 
 router.post("/", async (req, res, next) => {
   try {
@@ -20,6 +21,7 @@ router.post("/", async (req, res, next) => {
 router.get("/", isLoggedIn, async (req, res, next) => {
   res.send(req.user);
 });
+
 router.post("/signup", async (req, res, next) => {
   try {
     const users = await User.findAll({
@@ -28,21 +30,19 @@ router.post("/signup", async (req, res, next) => {
       },
     });
     if (users.length === 0) {
-      await User.create(req.body);
+      console.log(req.body);
+      let user = await User.create(req.body);
+      await seed(user.id);
       const credentials = {
         username: req.body.username,
         password: req.body.password,
       };
       res.send({ token: await User.authenticate(credentials) });
     } else {
-      const credentials = {
-        username: req.body.username,
-        password: req.body.password,
-      };
-      res.send({ token: await User.authenticate(credentials) });
+      res.send({ type: "error", message: "username exist" });
     }
-  } catch (er) {
-    next(er);
+  } catch (ex) {
+    next(ex);
   }
 });
 

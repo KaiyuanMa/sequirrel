@@ -17,15 +17,6 @@ router.get("/", isLoggedIn, async (req, res, next) => {
   }
 });
 
-router.post("/", async (req, res, next) => {
-  try {
-    await User.create(req.body);
-    res.sendStatus(201);
-  } catch (ex) {
-    next(ex);
-  }
-});
-
 router.get("/dataSets", isLoggedIn, async (req, res, next) => {
   try {
     res.send(await DataSet.findAll({ where: { userId: req.user.id } }));
