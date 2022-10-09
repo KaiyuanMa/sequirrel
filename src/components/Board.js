@@ -115,7 +115,7 @@ function Flow() {
   }, [models]);
 
   //TODO: useCallback ?, check documentation
-  const addModelHandelClick = (name) => {
+  const addModelHandelClick = async (name) => {
     const helper = async () => {
       const { data } = await apiAddModel({
         name: name,
@@ -147,7 +147,7 @@ function Flow() {
         })
       );
     };
-    helper();
+    await helper();
     setNewX(newX + 10);
     setNewY(newY + 10);
   };
