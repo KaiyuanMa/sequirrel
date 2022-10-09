@@ -6,7 +6,7 @@ const img3 = require("../../../public/img/feature-section-3.png");
 function Features() {
   return (
     <div className="feature-wrapper">
-      <div className="feature-block">
+      <div className="feature-block" data-aos="fade-right">
         <div className="feature-text-list">
           <div className="feature-text-title">You name it we got it</div>
           <div className="feature-text-content">
@@ -18,7 +18,7 @@ function Features() {
           <img src={img1} />
         </div>
       </div>
-      <div className="feature-block">
+      <div className="feature-block" data-aos="fade-left">
         <div className="feature-img feature-img-2">
           <img src={img2} />
         </div>
@@ -30,7 +30,7 @@ function Features() {
           </div>
         </div>
       </div>
-      <div className="feature-block">
+      <div className="feature-block" data-aos="fade-right">
         <div className="feature-text-list">
           <div className="feature-text-title">
             One account, unlimited access

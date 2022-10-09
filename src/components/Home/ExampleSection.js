@@ -5,7 +5,7 @@ const result2 = require("../../../public/img/example-section-result2.png");
 
 function ExampleSection() {
   return (
-    <div className="example-wrapper">
+    <div className="example-wrapper" data-aos="fade-up">
       <div className="example-wrapper-title">
         Creating a database has never been easier.
       </div>
