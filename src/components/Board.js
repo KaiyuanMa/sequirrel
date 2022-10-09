@@ -136,7 +136,6 @@ function Flow() {
       curr.position = { x: newX, y: newY };
       curr.data = { modelId: node.modelId, deleteNode };
       curr.dragHandle = ".model-node-header";
-      setNodes((nds) => nds.concat(curr));
       dispatch(
         addModelEntry({
           modelId: data.id,
@@ -146,6 +145,7 @@ function Flow() {
           primaryKey: true,
         })
       );
+      setNodes((nds) => nds.concat(curr));
     };
     await helper();
     setNewX(newX + 10);
