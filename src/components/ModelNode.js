@@ -22,7 +22,6 @@ function ModelNode(props) {
   };
   const data = props.data;
   const modelId = data.modelId;
-  console.log(data);
 
   useEffect(() => {
     const currModel = models.find((model) => model.id == modelId);
