@@ -152,10 +152,9 @@ function Flow() {
     setNewY(newY + 10);
   };
 
-  const onNodesChange = useCallback((changes) => {
+  const onNodesChange = (changes) => {
     setNodes((ns) => applyNodeChanges(changes, ns));
-  }, []);
-
+  };
   const onEdgesChange = useCallback((changes) => {
     setEdges((es) => applyEdgeChanges(changes, es));
     const deleteEdgeByNodes = async (changeId) => {
