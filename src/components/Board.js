@@ -227,7 +227,7 @@ function Flow() {
       >
         <MiniMap nodeColor="#202020" />
         <Controls />
-        <Background variant="dots" gap={20} />
+        {/* <Background variant="dots" gap={20} /> */}
         <MapTool addModelHandelClick={addModelHandelClick} />
       </ReactFlow>
     </div>

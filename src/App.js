@@ -31,8 +31,7 @@ function App() {
       <div className="app">
         <ReactFlowProvider>
           <SideBar />
-          <Flow />
-          {/* {auth.id ? <Flow /> : <Home />} */}
+          {auth.id ? <Flow /> : <Home />}
         </ReactFlowProvider>
       </div>
       <link

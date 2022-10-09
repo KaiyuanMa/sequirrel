@@ -19,10 +19,21 @@ function SideBar() {
 
   return (
     <div className="side-bar-wrapper">
-      <button onClick={showSideBar} className="side-bar-btn">
-        <span className="fa fa-hand-o-left side-bar-icon side-bar-icon-active"></span>
+      <button
+        onClick={showSideBar}
+        className={`side-bar-btn${auth.id ? " side-bar-btn-active" : ""}`}
+      >
+        <span
+          className={`fa fa-hand-o-left side-bar-icon${
+            auth.id ? " side-bar-icon-active" : ""
+          }`}
+        ></span>
       </button>
-      <div className="side-bar-content">
+      <div
+        className={`side-bar-content${
+          auth.id ? " side-bar-content-active" : ""
+        }`}
+      >
         {auth.id ? <UserPage /> : <UserControl />}
       </div>
     </div>

@@ -12,7 +12,14 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|svg|gif)$/i,
-        loader: "file-loader",
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              esModule: false,
+            },
+          },
+        ],
       },
     ],
   },

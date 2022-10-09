@@ -39,7 +39,6 @@ function UserPage() {
           <span className="fa fa-database" />
           <p className="subtitle-medium">Datasets</p>
         </div>
-
         <div
           onClick={() => {
             dispatch(
@@ -71,10 +70,19 @@ function UserPage() {
             >
               {currDataSet.name}
             </div>
-            <div
-              className={`user-page-dataSet-list-item-delete-btn${
+            {/* <div
+              className={`user-page-dataSet-list-item-btn user-page-dataSet-list-item-edit-btn${
                 currDataSet.id == dataSet.id
-                  ? " user-page-dataSet-list-item-delete-btn-active"
+                  ? " user-page-dataSet-list-item-btn-active"
+                  : ""
+              }`}
+            >
+              <span className="fa fa-pencil" />
+            </div> */}
+            <div
+              className={`user-page-dataSet-list-item-btn user-page-dataSet-list-item-delete-btn${
+                currDataSet.id == dataSet.id
+                  ? " user-page-dataSet-list-item-btn-active"
                   : ""
               }`}
               onClick={() => deleteDataSet(currDataSet.id)}
