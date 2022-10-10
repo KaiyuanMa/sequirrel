@@ -1,4 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import ReactFlow, {
   addEdge,
   Background,
@@ -108,52 +109,38 @@ function Flow() {
 
   useEffect(() => {
     if (dataSet.id) {
+      console.log(1);
       fetchData();
     }
   }, [models]);
 
   //TODO: useCallback ?, check documentation
   const addModelHandelClick = async (name) => {
-    const curr = {};
-    const helper = async () => {
-      const { data } = await apiAddModel({
-        name: name,
-        dataSetId: DataSetId,
-      });
-      dispatch(addModelAC(data));
-      const response = await apiAddNode({
-        modelId: data.id,
-        dataSetId: DataSetId,
-        positionX: newX,
-        positionY: newY,
-        type: "model",
-      });
-      const node = response.data;
-      curr.id = node.id;
-      curr.type = node.type;
-      curr.position = { x: newX, y: newY };
-      curr.data = { modelId: node.modelId, deleteNode };
-      curr.dragHandle = ".model-node-header";
-      dispatch(
-        addModelEntry({
-          modelId: data.id,
-          name: "id",
-          autoIncrement: true,
-          type: "Sequelize.INTEGER",
-          primaryKey: true,
-        })
-      );
+    const modelId = uuidv4();
+    const currModel = {
+      id: modelId,
+      name: name,
+      dataSetId: DataSetId,
     };
-    await helper();
-    // console.log(curr);
-    // //for testing
-    // const testNode = {
-    //   id: "1",
-    //   data: { label: "node 1" },
-    //   position: { x: newX, y: newY },
-    // };
-    // addNodes(testNode);
-    // // setNodes((nds) => nds.concat(curr));
+    const currNode = {
+      modelId: modelId,
+      dataSetId: DataSetId,
+      positionX: newX,
+      positionY: newY,
+      type: "model",
+    };
+    const currEntry = {
+      modelId: modelId,
+      name: "id",
+      autoIncrement: true,
+      type: "Sequelize.INTEGER",
+      primaryKey: true,
+    };
+    console.log(currModel, currNode, currEntry);
+    await apiAddModel(currModel);
+    await apiAddNode(currNode);
+    dispatch(addModelEntry(currEntry));
+    dispatch(addModelAC(currModel));
     setNewX(newX + 10);
     setNewY(newY + 10);
   };

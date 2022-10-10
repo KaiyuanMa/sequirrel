@@ -1,7 +1,7 @@
 import { getDataSetModels } from "../../api/dataSet";
 import {
   getModel,
-  addModel,
+  apiAddModel,
   apiDeleteModel,
   updateModel,
 } from "../../api/model";
@@ -47,11 +47,15 @@ const setModelAC = (modelId) => {
 };
 
 const addModelAC = (model) => {
-  return (dispatch) => {
-    dispatch({
-      type: "ADD_MODEL",
-      model: model,
-    });
+  return async (dispatch) => {
+    try {
+      dispatch({
+        type: "ADD_MODEL",
+        model: model,
+      });
+    } catch (ex) {
+      console.log(ex);
+    }
   };
 };
 
