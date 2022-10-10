@@ -148,16 +148,16 @@ function Flow() {
       );
     };
     await helper();
+    console.log(curr);
     addNodes(curr);
     // setNodes((nds) => nds.concat(curr));
     setNewX(newX + 10);
     setNewY(newY + 10);
   };
 
-  const onNodesChange = (changes) => {
-    console.log(changes);
+  const onNodesChange = useCallback((changes) => {
     setNodes((ns) => applyNodeChanges(changes, ns));
-  };
+  }, []);
   const onEdgesChange = useCallback((changes) => {
     setEdges((es) => applyEdgeChanges(changes, es));
     const deleteEdgeByNodes = async (changeId) => {
