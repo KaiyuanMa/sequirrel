@@ -45,6 +45,7 @@ function Flow() {
   const [newY, setNewY] = useState(200);
   const defaultEdgeOptions = { animated: true };
   const dispatch = useDispatch();
+  const { addNodes } = useReactFlow();
 
   const DataSetId = dataSet.id;
 
@@ -147,12 +148,14 @@ function Flow() {
       );
     };
     await helper();
-    setNodes((nds) => nds.concat(curr));
+    addNodes(curr);
+    // setNodes((nds) => nds.concat(curr));
     setNewX(newX + 10);
     setNewY(newY + 10);
   };
 
   const onNodesChange = (changes) => {
+    console.log(changes);
     setNodes((ns) => applyNodeChanges(changes, ns));
   };
   const onEdgesChange = useCallback((changes) => {
