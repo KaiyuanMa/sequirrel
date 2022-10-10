@@ -10,7 +10,7 @@ function ExampleSection() {
         Creating a database has never been easier.
       </div>
       <div className="example-wrapper-subtitle">
-        Save your time for something greater, leave dirty to Sequirrel.
+        Save your time for something greater, leave dirty work to Sequirrel.
       </div>
       <div className="example-wrapper-imgs">
         <div className="example-map-img">

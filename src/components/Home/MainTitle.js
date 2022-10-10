@@ -12,12 +12,12 @@ const maiPageNodeStyle = {
   width: 180,
 };
 
-const screenWidth = screen.width;
+const screenWidth = window.innerWidth;
 const initialNodes = [
   {
     id: "main-title-node-1",
     data: {
-      label: <>Parent</>,
+      label: <>User</>,
     },
     position: { x: screenWidth / 2 - 550, y: 165 },
     style: maiPageNodeStyle,
@@ -25,7 +25,7 @@ const initialNodes = [
   {
     id: "main-title-node-2",
     data: {
-      label: <>Parent</>,
+      label: <>Order</>,
     },
     position: { x: screenWidth / 2 - 650, y: 305 },
     style: maiPageNodeStyle,
@@ -33,7 +33,7 @@ const initialNodes = [
   {
     id: "main-title-node-3",
     data: {
-      label: <>Parent</>,
+      label: <>Address</>,
     },
     position: { x: screenWidth / 2 - 450, y: 305 },
     style: maiPageNodeStyle,
@@ -41,7 +41,7 @@ const initialNodes = [
   {
     id: "main-title-node-4",
     data: {
-      label: <>Parent</>,
+      label: <>Nut</>,
     },
     position: { x: screenWidth / 2 + 300, y: 165 },
     style: maiPageNodeStyle,
@@ -49,7 +49,7 @@ const initialNodes = [
   {
     id: "main-title-node-5",
     data: {
-      label: <>Parent</>,
+      label: <>Squirrel</>,
     },
     position: { x: screenWidth / 2 + 300, y: 305 },
     style: maiPageNodeStyle,
