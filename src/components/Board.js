@@ -103,9 +103,6 @@ function Flow() {
     if (dataSet.id) {
       fetchData();
       dispatch(setModelsAC(DataSetId));
-    } else {
-      setNodes([]);
-      setEdges([]);
     }
   }, [dataSet]);
 
@@ -148,9 +145,15 @@ function Flow() {
       );
     };
     await helper();
-    console.log(curr);
-    addNodes(curr);
-    // setNodes((nds) => nds.concat(curr));
+    // console.log(curr);
+    // //for testing
+    // const testNode = {
+    //   id: "1",
+    //   data: { label: "node 1" },
+    //   position: { x: newX, y: newY },
+    // };
+    // addNodes(testNode);
+    // // setNodes((nds) => nds.concat(curr));
     setNewX(newX + 10);
     setNewY(newY + 10);
   };
