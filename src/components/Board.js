@@ -116,6 +116,7 @@ function Flow() {
 
   //TODO: useCallback ?, check documentation
   const addModelHandelClick = async (name) => {
+    const curr = {};
     const helper = async () => {
       const { data } = await apiAddModel({
         name: name,
@@ -130,7 +131,6 @@ function Flow() {
         type: "model",
       });
       const node = response.data;
-      const curr = {};
       curr.id = node.id;
       curr.type = node.type;
       curr.position = { x: newX, y: newY };
@@ -145,9 +145,9 @@ function Flow() {
           primaryKey: true,
         })
       );
-      setNodes((nds) => nds.concat(curr));
     };
     await helper();
+    setNodes((nds) => nds.concat(curr));
     setNewX(newX + 10);
     setNewY(newY + 10);
   };
