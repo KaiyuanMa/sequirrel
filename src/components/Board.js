@@ -8,8 +8,6 @@ import ReactFlow, {
   applyNodeChanges,
   applyEdgeChanges,
   MarkerType,
-  getConnectedEdges,
-  useReactFlow,
 } from "react-flow-renderer";
 import { useDispatch, useSelector } from "react-redux";
 import { getDataSetEdges } from "../api/edge";
@@ -19,7 +17,6 @@ import {
   setModelsAC,
   deleteModelAC,
   addModelEntry,
-  setDataSetAC,
 } from "../state/actionCreators/modelsAC";
 import { apiAddModel } from "../api/model";
 import { apiAddNode, apiDeleteNode, apiUpdateNode } from "../api/node";
@@ -46,8 +43,6 @@ function Flow() {
   const [newY, setNewY] = useState(200);
   const defaultEdgeOptions = { animated: true };
   const dispatch = useDispatch();
-  const { addNodes } = useReactFlow();
-
   const DataSetId = dataSet.id;
 
   const deleteNode = (node) => {
@@ -109,7 +104,6 @@ function Flow() {
 
   useEffect(() => {
     if (dataSet.id) {
-      console.log(1);
       fetchData();
     }
   }, [models]);
@@ -136,7 +130,6 @@ function Flow() {
       type: "Sequelize.INTEGER",
       primaryKey: true,
     };
-    console.log(currModel, currNode, currEntry);
     await apiAddModel(currModel);
     await apiAddNode(currNode);
     dispatch(addModelEntry(currEntry));
@@ -180,7 +173,6 @@ function Flow() {
     addEdgeHelper();
   };
 
-  //
   const onNodesDelete = (nodes) => {
     const deleteNodeAndModel = async (node) => {
       await apiDeleteNode(node.data.modelId);
@@ -219,7 +211,7 @@ function Flow() {
       >
         <MiniMap nodeColor="#202020" />
         <Controls />
-        {/* <Background variant="dots" gap={20} /> */}
+        <Background variant="dots" gap={20} />
         <MapTool addModelHandelClick={addModelHandelClick} />
       </ReactFlow>
     </div>

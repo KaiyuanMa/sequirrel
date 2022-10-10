@@ -7,7 +7,6 @@ import {
   editModelAC,
   deleteModelAC,
 } from "../state/actionCreators/modelsAC";
-import { apiDeleteModel } from "../api/model";
 import { apiDeleteNode } from "../api/node";
 
 function ModelNode(props) {

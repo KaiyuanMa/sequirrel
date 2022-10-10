@@ -8,14 +8,12 @@ import {
 const setDataSetAC = (dataSetId, oldDataSetId) => {
   return async (dispatch) => {
     try {
-      console.log(dataSetId);
       if (!dataSetId) {
         dispatch({
           type: "SET_DATASET",
           dataSet: {},
         });
       } else {
-        console.log(dataSetId);
         const response = await getDataSet(dataSetId);
         dispatch({
           type: "SET_DATASET",
@@ -31,7 +29,7 @@ const setDataSetAC = (dataSetId, oldDataSetId) => {
 const deleteDataSetAC = (dataSetId) => {
   return async (dispatch) => {
     try {
-      await deleteDataSet(dataSetId);
+      await apiDeleteDataSet(dataSetId);
       dispatch({
         type: "DEL_DATASET",
       });
@@ -44,7 +42,7 @@ const deleteDataSetAC = (dataSetId) => {
 const addDataSetAC = (dataSet) => {
   return async (dispatch) => {
     try {
-      const { data } = await addDataSet(dataSet);
+      const { data } = await apiAddDataSet(dataSet);
       dispatch({
         type: "ADD_DATASET",
         dataSet: data,

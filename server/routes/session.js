@@ -30,7 +30,6 @@ router.post("/signup", async (req, res, next) => {
       },
     });
     if (users.length === 0) {
-      console.log(req.body);
       let user = await User.create(req.body);
       await seed(user.id);
       const credentials = {

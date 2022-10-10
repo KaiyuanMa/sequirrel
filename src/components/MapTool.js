@@ -1,6 +1,6 @@
 import React from "react";
 import GenerateFile from "./GenerateFile";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 function MapTool(props) {
   const { dataSet } = useSelector((state) => state.dataSet);

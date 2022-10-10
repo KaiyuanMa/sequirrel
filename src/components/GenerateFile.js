@@ -5,7 +5,6 @@ import { useSelector } from "react-redux";
 import { useReactFlow } from "react-flow-renderer";
 
 function GenerateFile() {
-  const { auth } = useSelector((state) => state.auth);
   const { dataSet } = useSelector((state) => state.dataSet);
   const { models } = useSelector((state) => state.models);
   const reactFlowInstance = useReactFlow();

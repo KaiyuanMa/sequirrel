@@ -197,7 +197,6 @@ const seedUserEntry = async (models) => {
 
 const seed = async (userId) => {
   try {
-    console.log(2);
     const dataSet = await seedUserDataset(userId);
     const models = await seedUserModel(dataSet.id);
     const nodes = await seedUserNode(models, dataSet.id);

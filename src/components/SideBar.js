@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import { connect, useDispatch, useSelector } from "react-redux";
-import { exchangeToken, logout } from "../state/actionCreators/authAC";
+import { useDispatch, useSelector } from "react-redux";
 import UserControl from "./UserControl";
 import UserPage from "./UserPage";
 
 function SideBar() {
-  const dispatch = useDispatch();
   const { auth } = useSelector((state) => state.auth);
 
   const showSideBar = () => {

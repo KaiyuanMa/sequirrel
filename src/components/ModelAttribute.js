@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   deleteModelEntry,
   updateModelEntryAC,
-  addValidationAC,
 } from "../state/actionCreators/modelsAC";
 import ModelValidationList from "./ModelValidationList";
 import ModelAttributeBtnGroup from "./ModelAttributeBtnGroup";

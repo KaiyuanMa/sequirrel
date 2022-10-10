@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import ModelValidation from "./ModelValidation";
 import { addValidationAC } from "../state/actionCreators/modelsAC";
-import { updateDataSet } from "../api/dataSet";
 import { deleteValidationAC } from "../state/actionCreators/modelsAC";
 
 function ModelValidationList(props) {

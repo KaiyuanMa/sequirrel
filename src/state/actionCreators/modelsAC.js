@@ -1,10 +1,5 @@
 import { getDataSetModels } from "../../api/dataSet";
-import {
-  getModel,
-  apiAddModel,
-  apiDeleteModel,
-  updateModel,
-} from "../../api/model";
+import { getModel, apiDeleteModel, updateModel } from "../../api/model";
 import {
   addEntry,
   deleteEntry,
@@ -78,7 +73,6 @@ const editModelAC = (modelId, params) => {
     try {
       await updateModel(modelId, params);
       const { data } = await getModel(modelId);
-      console.log(data);
       dispatch({
         type: "UPDATE_MODEL",
         modelId: modelId,

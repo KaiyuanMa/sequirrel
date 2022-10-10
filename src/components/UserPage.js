@@ -20,7 +20,6 @@ function UserPage() {
   }, []);
 
   const switchDataSet = (currDataSetId) => {
-    console.log("clicked");
     dispatch(setDataSetAC(currDataSetId, dataSet.id));
     dispatch(setRecentDataSetAC(currDataSetId));
   };

@@ -49,10 +49,6 @@ function ModelEdge({
     await apiUpdateEdge(id, { label: value });
   };
 
-  useEffect(() => {
-    // inputHelper();
-  }, []);
-
   return (
     <>
       <path
