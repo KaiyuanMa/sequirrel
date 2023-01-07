@@ -2,7 +2,7 @@ import React from "react";
 import JSZip from "jszip";
 import FileSaver from "file-saver";
 import { useSelector } from "react-redux";
-import { useReactFlow } from "react-flow-renderer";
+import { useReactFlow } from "reactflow";
 
 function GenerateFile() {
   const { dataSet } = useSelector((state) => state.dataSet);

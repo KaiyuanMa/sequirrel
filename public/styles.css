@@ -1044,6 +1044,9 @@ select:focus {
   align-items: center;
   flex-direction: column;
   background-color: white;
+  width: 80%;
+  border-radius: 40px;
+  margin: auto;
 }
 
 .take-action-section-title {

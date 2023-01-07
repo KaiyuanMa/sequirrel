@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState, useRef } from "react";
-import { Handle, Position } from "react-flow-renderer";
+import { Handle, Position } from "reactflow";
 import { useDispatch, useSelector } from "react-redux";
 import ModelAttribute from "./ModelAttribute";
 import {
@@ -62,11 +62,13 @@ function ModelNode(props) {
 
   const handelDelete = () => {
     const deleteNodeAndModel = async (data) => {
+      console.log(data);
       await apiDeleteNode(data.modelId);
       dispatch(deleteModelAC(data.modelId));
     };
-    deleteNodeAndModel(data);
     data.deleteNode(props);
+    console.log(props);
+    deleteNodeAndModel(data);
   };
 
   return model ? (

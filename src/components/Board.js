@@ -8,7 +8,9 @@ import ReactFlow, {
   applyNodeChanges,
   applyEdgeChanges,
   MarkerType,
-} from "react-flow-renderer";
+  useReactFlow,
+  getConnectedEdges,
+} from "reactflow";
 import { useDispatch, useSelector } from "react-redux";
 import { getDataSetEdges } from "../api/edge";
 import { getDataSetNode } from "../api/node";
@@ -21,10 +23,10 @@ import {
 import { apiAddModel } from "../api/model";
 import { apiAddNode, apiDeleteNode, apiUpdateNode } from "../api/node";
 import { apiAddEdge, apiDeleteEdgeByNode, apiDeleteEdge } from "../api/edge";
-
 import ModelNode from "./ModelNode";
 import ModelEdge from "./ModelEdge";
 import MapTool from "./MapTool";
+import "reactflow/dist/style.css";
 
 const rfStyle = {
   backgroundColor: "#181818",
@@ -44,9 +46,11 @@ function Flow() {
   const defaultEdgeOptions = { animated: true };
   const dispatch = useDispatch();
   const DataSetId = dataSet.id;
+  const { deleteElements } = useReactFlow();
 
   const deleteNode = (node) => {
-    onNodesChange([{ id: node.id, type: "remove" }]);
+    deleteElements({ node: [node] });
+    // onNodesChange([{ id: node.id, type: "remove" }]);
     //TODO: delete edges when deleting node on custom delete function
     // const currEdges = getConnectedEdges(
     //   [nodes.find((currNode) => currNode.id == node.id)],
@@ -139,9 +143,11 @@ function Flow() {
   };
 
   const onNodesChange = useCallback((changes) => {
+    console.log(1);
     setNodes((ns) => applyNodeChanges(changes, ns));
   }, []);
   const onEdgesChange = useCallback((changes) => {
+    console.log(1);
     setEdges((es) => applyEdgeChanges(changes, es));
     const deleteEdgeByNodes = async (changeId) => {
       const idA = changeId.slice(16, 52);
@@ -159,6 +165,7 @@ function Flow() {
       }
     }
   }, []);
+
   const onConnect = (connection) => {
     connection.type = "modelEdge";
     connection.markerEnd = {
@@ -183,6 +190,16 @@ function Flow() {
     }
   };
 
+  const onEdgesDelete = (edges) => {
+    const deleteEdge = async (edge) => {
+      console.log(1);
+      await apiDeleteEdge(edge.id);
+    };
+    for (let edge of edges) {
+      deleteEdge(edge);
+    }
+  };
+
   const onNodeDragStop = (event, node, nodes) => {
     const updateNode = async () => {
       await apiUpdateNode(node.data.modelId, {
@@ -198,9 +215,10 @@ function Flow() {
       <ReactFlow
         nodes={nodes}
         edges={edges}
-        onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
-        onNodesDelete={onNodesDelete}
+        onEdgesDelete={onEdgesDelete}
+        onNodesChange={onNodesChange}
+        // onNodesDelete={onNodesDelete}
         onNodeDragStop={onNodeDragStop}
         onConnect={onConnect}
         nodeTypes={nodeTypes}

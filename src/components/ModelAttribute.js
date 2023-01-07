@@ -66,7 +66,7 @@ function ModelAttribute(prop) {
   };
 
   const showEntryContent = () => {
-    const entryBtn = document.getElementById(`${entryId}-btn`);
+    // const entryBtn = document.getElementById(`${entryId}-btn`);
     const entryContent = document.getElementById(`${entryId}-content`);
     const btnIcon = document.getElementById(`${entryId}-btn-icon`);
     const plusIcon = document.getElementById(

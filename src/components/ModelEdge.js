@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { getBezierPath, getEdgeCenter } from "react-flow-renderer";
+import { getBezierPath, getEdgeCenter } from "reactflow";
 import { apiUpdateEdge } from "../api/edge";
 
 function ModelEdge({
@@ -16,7 +16,7 @@ function ModelEdge({
   markerEnd,
 }) {
   const foreignObjectSize = 150;
-  const edgePath = getBezierPath({
+  const [path, edgeCenterX, edgeCenterY] = getBezierPath({
     sourceX,
     sourceY,
     sourcePosition,
@@ -24,12 +24,12 @@ function ModelEdge({
     targetY,
     targetPosition,
   });
-  const [edgeCenterX, edgeCenterY] = getEdgeCenter({
-    sourceX,
-    sourceY,
-    targetX,
-    targetY,
-  });
+  // const [edgeCenterX, edgeCenterY] = getEdgeCenter({
+  //   sourceX,
+  //   sourceY,
+  //   targetX,
+  //   targetY,
+  // });
 
   const inputHelper = () => {
     const relationSelectWrapper = document.getElementById(
@@ -55,7 +55,7 @@ function ModelEdge({
         id={id}
         style={style}
         className="react-flow__edge-path"
-        d={edgePath}
+        d={path}
         markerEnd={markerEnd}
       />
       <foreignObject

@@ -1,9 +1,5 @@
 import React, { useCallback } from "react";
-import ReactFlow, {
-  Background,
-  useNodesState,
-  useEdgesState,
-} from "react-flow-renderer";
+import ReactFlow, { Background, useNodesState, useEdgesState } from "reactflow";
 
 const maiPageNodeStyle = {
   background: "#202020",

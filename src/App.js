@@ -5,7 +5,7 @@ import { apiGetRecentDataSet } from "./api/dataSet";
 import Home from "./components/Home";
 import { setDataSetAC } from "./state/actionCreators/dataSetAC";
 import Flow from "./components/Board";
-import { ReactFlowProvider } from "react-flow-renderer";
+import { ReactFlowProvider } from "reactflow";
 import SideBar from "./components/SideBar";
 
 function App() {
