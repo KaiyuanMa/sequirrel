@@ -3,7 +3,7 @@
 <div align="center">
     <img src="./public/logo copy.svg" alt="Logo" width="100">
     <h2>Sequirrel - A Sequelize visualizer/generator</h2>
-    <a href="https://sequirrel.herokuapp.com/">View Demo</a>
+    <a href="https://sequirrel.herokuapp.com/" target="_blank">View Demo</a>
     <img src="./public/md screen.png" alt="Logo" >
 </div>
 <h4>Drag & drop UI to build your sequelize code</h4>
