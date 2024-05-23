@@ -1,43 +1,62 @@
-Model properties:
--Type
--defaultValue
--allowNull?
--unique?
--autoIncrement?
--primaryKey?
+# Project Title
 
+Simple overview of use/purpose.
 
-    validate: {
-      is: /^[a-z]+$/i,          // matches this RegExp
-      is: ["^[a-z]+$",'i'],     // same as above, but constructing the RegExp from a string
-      not: /^[a-z]+$/i,         // does not match this RegExp
-      not: ["^[a-z]+$",'i'],    // same as above, but constructing the RegExp from a string
-      isEmail: true,            // checks for email format (foo@bar.com)
-      isUrl: true,              // checks for url format (https://foo.com)
-      isIP: true,               // checks for IPv4 (129.89.23.1) or IPv6 format
-      isIPv4: true,             // checks for IPv4 (129.89.23.1)
-      isIPv6: true,             // checks for IPv6 format
-      isAlpha: true,            // will only allow letters
-      isAlphanumeric: true,     // will only allow alphanumeric characters, so "_abc" will fail
-      isNumeric: true,          // will only allow numbers
-      isInt: true,              // checks for valid integers
-      isFloat: true,            // checks for valid floating point numbers
-      isDecimal: true,          // checks for any numbers
-      isLowercase: true,        // checks for lowercase
-      isUppercase: true,        // checks for uppercase
-      notNull: true,            // won't allow null
-      isNull: true,             // only allows null
-      notEmpty: true,           // don't allow empty strings
-      equals: 'specific value', // only allow a specific value
-      contains: 'foo',          // force specific substrings
-      notIn: [['foo', 'bar']],  // check the value is not one of these
-      isIn: [['foo', 'bar']],   // check the value is one of these
-      notContains: 'bar',       // don't allow specific substrings
-      len: [2,10],              // only allow values with length between 2 and 10
-      isUUID: 4,                // only allow uuids
-      isDate: true,             // only allow date strings
-      isAfter: "2011-11-05",    // only allow date strings after a specific date
-      isBefore: "2011-11-05",   // only allow date strings before a specific date
-      max: 23,                  // only allow values <= 23
-      min: 23,                  // only allow values >= 23
-      isCreditCard: true,       // check for valid credit card numbers
+## Description
+
+An in-depth paragraph about your project and overview of use.
+
+## Getting Started
+
+### Dependencies
+
+* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
+* ex. Windows 10
+
+### Installing
+
+* How/where to download your program
+* Any modifications needed to be made to files/folders
+
+### Executing program
+
+* How to run the program
+* Step-by-step bullets
+```
+code blocks for commands
+```
+
+## Help
+
+Any advise for common problems or issues.
+```
+command to run if program contains helper info
+```
+
+## Authors
+
+Contributors names and contact info
+
+ex. Dominique Pizzie  
+ex. [@DomPizzie](https://twitter.com/dompizzie)
+
+## Version History
+
+* 0.2
+    * Various bug fixes and optimizations
+    * See [commit change]() or See [release history]()
+* 0.1
+    * Initial Release
+
+## License
+
+This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [awesome-readme](https://github.com/matiassingers/awesome-readme)
+* [PurpleBooth](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* [dbader](https://github.com/dbader/readme-template)
+* [zenorocha](https://gist.github.com/zenorocha/4526327)
+* [fvcproductions](https://gist.github.com/fvcproductions/1bfc2d4aecb01a834b46)
